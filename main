@@ -1,0 +1,31 @@
+import books_data
+from books import (
+    show_help, add_book, list_books, random_recommendation,
+    find_book, add_genre, list_genres, long_books, upper_books,
+)
+catalog = list(books_data.books)  # начинаем с книг из books_data.py
+show_help()
+while True:
+    command = input("\nВведите команду: ").strip()
+    if command == "add_book":
+        add_book(catalog)
+    elif command == "list_books":
+        list_books(catalog)
+    elif command == "find_book":
+        find_book(catalog)
+    elif command == "add_genre":
+        add_genre()
+    elif command == "list_genres":
+        list_genres()
+    elif command == "long_books":
+        long_books(catalog)
+    elif command == "upper_books":
+        upper_books(catalog)
+    elif command == "random_recommendation":
+        random_recommendation(catalog)
+    elif command == "show_help":
+        show_help()
+    elif command == "exit":
+        break
+    else:
+        print("Неизвестная команда. Введите show_help, чтобы увидеть список команд.")
